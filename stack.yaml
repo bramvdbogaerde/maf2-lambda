@@ -33,7 +33,7 @@ packages:
 - .
 extra-deps:
   - github: softwarelanguageslab/maf-hs
-    commit: 610a317c81fc4eab4e34478c574bfa41677d3769
+    commit: ceb184de59ec2e5cee8e8dac93d48bd2f6048a69
     subdirs:
       - maf2-analysis
       - maf2-syntax

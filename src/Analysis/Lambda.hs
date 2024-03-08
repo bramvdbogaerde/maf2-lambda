@@ -10,18 +10,26 @@ import Domain.Lambda
 import Domain (isTrue)
 
 import Control.Fixpoint.EffectDriven
-import Control.Monad.State.SVar 
+import qualified Control.Monad.State.SVar as SVar
+
+import Data.Map (Map)
+import qualified Data.Map as Map
+import Data.Function ((&))
+import Data.Functor.Identity
+import Prelude hiding (iterate)
+import Control.Monad
+
 
 data Component = Component Exp (Env Adr)
-               deriving (Eq, Ord)
+               deriving (Eq, Ord, Show)
 
 data Adr = Adr String 
          | RetAdr Component
-         deriving (Eq, Ord)
+         deriving (Eq, Ord, Show)
 
 type LamM m = (Monad m,
                MonadJoin m,
-               StoreM m () Adr (LamVal Adr),
+               StoreM m () Adr V,
                EffectM m Component,
                EnvM m Adr (Env Adr))
 
@@ -51,6 +59,20 @@ apply (env, Lam (Ident nam _) exp') v =
    withEnv (const env) $
       withExtendedEnv [(nam, Adr nam)] $ do
          writeAdr (Adr nam) v
-         spawn (Component exp' env)
-         lookupAdr (RetAdr (Component exp' env))
+         env' <- getEnv
+         spawn (Component exp' env')
+         lookupAdr (RetAdr (Component exp' env'))
 apply _ _ = error "not a valid closure"
+
+analyze :: Exp -> Map Adr V
+analyze prg = 
+      let ((_, sto), vsto) = iterate intra
+               & runEnv Map.empty 
+               & runJoinT
+               & runStoreT' 
+               & (`runEffectT`initial)
+               & runIdentity
+      in SVar.unify sto vsto
+   where initial = [Component prg Map.empty]
+         intra cmp@(Component exp' env) = 
+            void $ withEnv (const env) (eval exp') >>= (writeAdr (RetAdr cmp))

@@ -12,7 +12,7 @@
 {-# LANGUAGE UndecidableInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE TypeApplications #-}
-module Domain.Lambda(Env, Clo, LamVal, clo, num, nonzero, inc, clos) where
+module Domain.Lambda(Env, Clo, M, LamVal(..), clo, num, nonzero, inc, clos, SLamKey(..)) where
 
 import Data.Singletons
 import Domain (inject)
@@ -26,7 +26,7 @@ import Syntax.Lambda
 
 import Control.Monad.Join
 
-type Env adr = Map Ident adr
+type Env adr = Map String adr
 type Clo adr = (Env adr, Exp)
 
 data LamKey = IntKey | CloKey deriving (Eq, Ord)
