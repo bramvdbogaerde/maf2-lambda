@@ -7,55 +7,55 @@ packages:
 - completed:
     name: maf2-analysis
     pantry-tree:
-      sha256: 1c5f2e9c7a332b4b4790594affb4b4c6e675a88a83a0f6df194491fd665ca474
-      size: 24734
-    sha256: 2a7860c47f00dab6cf23c495a8f4800a2362fd1d173857fed8f5ffadf70b83af
-    size: 724401
+      sha256: afcff531af03576262692f68b1b4a091b6e7568293db41e80813c5fcf8fee98c
+      size: 24808
+    sha256: 6245f6b17e87f6b4dce25f8fe547c411b21ebdc208ef2fa67b803af28b1822cc
+    size: 723915
     subdir: maf2-analysis
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
     version: 0.1.0.0
   original:
     subdir: maf2-analysis
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
 - completed:
     name: maf2-syntax
     pantry-tree:
       sha256: 325dd67572c4b39aa2f5d927452629209583b300a5322f36f2ec28b28ce7fd2c
       size: 1323
-    sha256: 2a7860c47f00dab6cf23c495a8f4800a2362fd1d173857fed8f5ffadf70b83af
-    size: 724401
+    sha256: 6245f6b17e87f6b4dce25f8fe547c411b21ebdc208ef2fa67b803af28b1822cc
+    size: 723915
     subdir: maf2-syntax
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
     version: 0.1.0.0
   original:
     subdir: maf2-syntax
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
 - completed:
     name: maf2-domains
     pantry-tree:
-      sha256: 4f024bbb1caf63bbee8a676adf9c4bb319a0aeca1a469c7481442e62612d9627
-      size: 5476
-    sha256: 2a7860c47f00dab6cf23c495a8f4800a2362fd1d173857fed8f5ffadf70b83af
-    size: 724401
+      sha256: 3e09607f38e3892f10edca34d5a884abb128d8eb227e132041251460fa245a48
+      size: 5625
+    sha256: 6245f6b17e87f6b4dce25f8fe547c411b21ebdc208ef2fa67b803af28b1822cc
+    size: 723915
     subdir: maf2-domains
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
     version: 0.1.0.0
   original:
     subdir: maf2-domains
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
 - completed:
     name: maf2-typelevel
     pantry-tree:
       sha256: b54b02866b43c62ef588ce73b2821fc539842b40d206bde8d395b7b7dace0910
       size: 857
-    sha256: 2a7860c47f00dab6cf23c495a8f4800a2362fd1d173857fed8f5ffadf70b83af
-    size: 724401
+    sha256: 6245f6b17e87f6b4dce25f8fe547c411b21ebdc208ef2fa67b803af28b1822cc
+    size: 723915
     subdir: maf2-typelevel
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
     version: 0.1.0.0
   original:
     subdir: maf2-typelevel
-    url: https://github.com/softwarelanguageslab/maf-hs/archive/ceb184de59ec2e5cee8e8dac93d48bd2f6048a69.tar.gz
+    url: https://github.com/softwarelanguageslab/maf-hs/archive/1b016f341e80e8e04aacb3c7c66ccca9f84beba7.tar.gz
 snapshots:
 - completed:
     sha256: a81fb3877c4f9031e1325eb3935122e608d80715dc16b586eb11ddbff8671ecd
