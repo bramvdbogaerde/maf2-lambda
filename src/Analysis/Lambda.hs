@@ -1,6 +1,6 @@
 {-# LANGUAGE ConstraintKinds #-}
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE TupleSections #-}
+{-# LANGUAGE TupleSections, TypeApplications #-}
 module Analysis.Lambda where
 
 import Control.Monad.Join
@@ -34,6 +34,7 @@ type LamM m = (Monad m,
                EnvM m Adr (Env Adr))
 
 type V = LamVal Adr
+type Sto = Map Adr (SVar.SVar V)
 
 eval :: LamM m => Exp -> m V
 eval lam@(Lam _ _) =
@@ -66,13 +67,14 @@ apply _ _ = error "not a valid closure"
 
 analyze :: Exp -> Map Adr V
 analyze prg = 
-      let ((_, sto), vsto) = iterate intra
-               & runEnv Map.empty 
-               & runJoinT
-               & runStoreT' 
-               & (`runEffectT`initial)
+      let (sto, vsto) = iterate runIntra Map.empty
+               & (runEffectT initial)
                & runIdentity
       in SVar.unify sto vsto
-   where initial = [Component prg Map.empty]
+   where initial  = [Component prg Map.empty]
+         runIntra cmp state = snd <$> (intra cmp  
+                      & runEnv Map.empty 
+                      & runJoinT
+                      & runStoreT' @Adr @V state)
          intra cmp@(Component exp' env) = 
             void $ withEnv (const env) (eval exp') >>= (writeAdr (RetAdr cmp))
