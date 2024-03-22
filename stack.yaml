@@ -33,12 +33,11 @@ packages:
 - .
 extra-deps:
   - github: softwarelanguageslab/maf-hs
-    commit: 1b016f341e80e8e04aacb3c7c66ccca9f84beba7
+    commit: 1d506b081cc722d25901a4c341fcbdb13bd98515
     subdirs:
       - maf2-analysis
       - maf2-syntax
       - maf2-domains
-      - maf2-typelevel
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
